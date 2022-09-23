@@ -11,7 +11,7 @@ import kotlin.random.Random
 class MainActivity : AppCompatActivity() {
 
     //Testrad 1
-
+    //Testrad 2
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
