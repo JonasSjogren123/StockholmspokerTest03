@@ -10,7 +10,7 @@ enum class Cards(val rank: Int) {
     EIGHT(8),
     NINE(9),
     TEN(10),
-    KNIGHT(11),
+    Jack(11),
     QUEEN(12),
     KING(13),
     ACE(14)

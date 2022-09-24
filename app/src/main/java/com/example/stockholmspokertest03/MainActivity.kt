@@ -10,13 +10,34 @@ import android.widget.RelativeLayout
 abstract class MainActivity : AppCompatActivity() {
 
 abstract var numberOfCards : Int?
+    val rankJack : Int = 11
+    val rankQueen : Int = 12
+    val rankKing : Int = 13
+    val rankAce : Int = 14
+
+    val imageViewClub2 = ImageView(this)
+    val imageViewClub3 = ImageView(this)
+    val imageViewClub4 = ImageView(this)
+    val imageViewClub5 = ImageView(this)
+    val imageViewClub6 = ImageView(this)
+    val imageViewClub7 = ImageView(this)
+    val imageViewClub8 = ImageView(this)
+    val imageViewClub9 = ImageView(this)
+    val imageViewClub10 = ImageView(this)
+    val imageViewClubJack = ImageView(this)
+    val imageViewClubQueen = ImageView(this)
+    val imageViewClubKing = ImageView(this)
+    val imageViewClubAce = ImageView(this)
+    val imageViewDiamond2 = ImageView(this)
+    val imageViewDiamond3 = ImageView(this)
+    val imageViewDiamond4 = ImageView(this)
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        //val imageView01 = ImageView(this)
+        /*
         val imageViewClub2 = ImageView(this)
         val imageViewClub3 = ImageView(this)
         val imageViewClub4 = ImageView(this)
@@ -26,13 +47,14 @@ abstract var numberOfCards : Int?
         val imageViewClub8 = ImageView(this)
         val imageViewClub9 = ImageView(this)
         val imageViewClub10 = ImageView(this)
-        val imageViewClubJ = ImageView(this)
-        val imageViewClubQ = ImageView(this)
-        val imageViewClubK = ImageView(this)
-        val imageViewClubA = ImageView(this)
+        val imageViewClubJack = ImageView(this)
+        val imageViewClubQueen = ImageView(this)
+        val imageViewClubKing = ImageView(this)
+        val imageViewClubAce = ImageView(this)
         val imageViewDiamond2 = ImageView(this)
         val imageViewDiamond3 = ImageView(this)
         val imageViewDiamond4 = ImageView(this)
+         */
 
 
 
@@ -46,10 +68,10 @@ abstract var numberOfCards : Int?
         imageViewClub8.layoutParams= LinearLayout.LayoutParams(400, 400)
         imageViewClub9.layoutParams= LinearLayout.LayoutParams(400, 400)
         imageViewClub10.layoutParams= LinearLayout.LayoutParams(400, 400)
-        imageViewClubJ.layoutParams= LinearLayout.LayoutParams(400, 400)
-        imageViewClubQ.layoutParams= LinearLayout.LayoutParams(400, 400)
-        imageViewClubK.layoutParams= LinearLayout.LayoutParams(400, 400)
-        imageViewClubA.layoutParams= LinearLayout.LayoutParams(400, 400)
+        imageViewClubJack.layoutParams= LinearLayout.LayoutParams(400, 400)
+        imageViewClubQueen.layoutParams= LinearLayout.LayoutParams(400, 400)
+        imageViewClubKing.layoutParams= LinearLayout.LayoutParams(400, 400)
+        imageViewClubAce.layoutParams= LinearLayout.LayoutParams(400, 400)
         imageViewDiamond2.layoutParams= LinearLayout.LayoutParams(400, 400)
         imageViewDiamond3.layoutParams= LinearLayout.LayoutParams(400, 400)
         imageViewDiamond4.layoutParams= LinearLayout.LayoutParams(400, 400)
@@ -74,10 +96,10 @@ abstract var numberOfCards : Int?
             imageViewClub8.setImageResource(R.drawable.playing_card_club_8)
             imageViewClub9.setImageResource(R.drawable.playing_card_club_9)
             imageViewClub10.setImageResource(R.drawable.playing_card_club_10)
-            imageViewClubJ.setImageResource(R.drawable.playing_card_club_j)
-            imageViewClubQ.setImageResource(R.drawable.playing_card_club_q)
-            imageViewClubK.setImageResource(R.drawable.playing_card_club_k)
-            imageViewClubA.setImageResource(R.drawable.playing_card_club_a)
+            imageViewClubJack.setImageResource(R.drawable.playing_card_club_jack)
+            imageViewClubQueen.setImageResource(R.drawable.playing_card_club_queen)
+            imageViewClubKing.setImageResource(R.drawable.playing_card_club_king)
+            imageViewClubAce.setImageResource(R.drawable.playing_card_club_ace)
             imageViewDiamond2.setImageResource(R.drawable.playing_card_diamond_2)
             imageViewDiamond3.setImageResource(R.drawable.playing_card_diamond_3)
             imageViewDiamond4.setImageResource(R.drawable.playing_card_diamond_4)
@@ -100,14 +122,14 @@ abstract var numberOfCards : Int?
             rotateView(imageViewClub9)
             placeView(imageViewClub10)
             rotateView(imageViewClub10)
-            placeView(imageViewClubJ)
-            rotateView(imageViewClubJ)
-            placeView(imageViewClubQ)
-            rotateView(imageViewClubQ)
-            placeView(imageViewClubK)
-            rotateView(imageViewClubK)
-            placeView(imageViewClubA)
-            rotateView(imageViewClubA)
+            placeView(imageViewClubJack)
+            rotateView(imageViewClubJack)
+            placeView(imageViewClubQueen)
+            rotateView(imageViewClubQueen)
+            placeView(imageViewClubKing)
+            rotateView(imageViewClubKing)
+            placeView(imageViewClubAce)
+            rotateView(imageViewClubAce)
             placeView(imageViewDiamond2)
             rotateView(imageViewDiamond2)
             placeView(imageViewDiamond3)
@@ -129,10 +151,10 @@ abstract var numberOfCards : Int?
         layout?.addView(imageViewClub8)
         layout?.addView(imageViewClub9)
         layout?.addView(imageViewClub10)
-        layout?.addView(imageViewClubJ)
-        layout?.addView(imageViewClubQ)
-        layout?.addView(imageViewClubK)
-        layout?.addView(imageViewClubA)
+        layout?.addView(imageViewClubJack)
+        layout?.addView(imageViewClubQueen)
+        layout?.addView(imageViewClubKing)
+        layout?.addView(imageViewClubAce)
         layout?.addView(imageViewDiamond2)
         layout?.addView(imageViewDiamond3)
         layout?.addView(imageViewDiamond4)
@@ -151,9 +173,17 @@ abstract var numberOfCards : Int?
         view.rotation = randomInt.toFloat()
     }
 
-    fun addView(view : ImageView){
-        var randomCardNumber = (1..numberOfCards).random()
-        layout?.addView(imageViewClub)
+    fun addPlayingCardViewsRandomly(view : ImageView){
+
+        numberOfCards = 4
+
+        //var randomCardNumber = (1..numberOfCards!!).random()
+        //layout?.addView(imageViewClub)
+
+        var list = mutableListOf(imageViewClub2, imageViewClub3, imageViewClub4, imageViewClub5)
+        var randomElements = list.asSequence().shuffled().take(numberOfElements).toList()
+
+        list.removeIf { i -> randomElements.contains(i) }
 
     }
 
