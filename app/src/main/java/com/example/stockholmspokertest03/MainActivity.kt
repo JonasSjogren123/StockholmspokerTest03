@@ -7,18 +7,14 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.RelativeLayout
 import androidx.appcompat.app.AppCompatActivity
-import kotlin.random.Random
-import android.util.Log.*
 
 class MainActivity : AppCompatActivity() {
 
         var numberOfCards: Int = 16
-        /*val rankJack: Int = 11
+        val rankJack: Int = 11
         val rankQueen: Int = 12
         val rankKing: Int = 13
         val rankAce: Int = 14
-
-         */
 
     //lateinit var viewTest1: ImageView
 /*
@@ -197,14 +193,11 @@ class MainActivity : AppCompatActivity() {
             //
             // list.removeIf { i -> randomElements.contains(i) }
             //var list = mutableListOf(imageViewClub2, imageViewClub3, imageViewClub4, imageViewClub5)
-            var listOfInts = mutableListOf<Int>(1,2,3,4,5,6,7,8)
+            var listOfInts = mutableListOf<Int>(2,3,4,5,6,7,8,9,10,rankJack, rankQueen,rankKing, rankAce)
+            var listOfRandomInts = listOfInts.toMutableList()
+            listOfRandomInts.shuffle()
             Log.d("!!!","listOfInts$listOfInts")
-            var randomList = List(8) {
-            Random.nextInt()
-        }
-        Log.d("!!!","randomList$randomList")
-
-
+            Log.d("!!!","listOfInts$listOfRandomInts")
     }
 
 }
