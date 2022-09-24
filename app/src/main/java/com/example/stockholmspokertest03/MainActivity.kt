@@ -7,10 +7,9 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.RelativeLayout
 
-class MainActivity : AppCompatActivity() {
+abstract class MainActivity : AppCompatActivity() {
 
-    //Testrad 1
-    //Testrad 2
+abstract var numberOfCards : Int?
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -150,6 +149,12 @@ class MainActivity : AppCompatActivity() {
     fun rotateView(view : ImageView) {
         var randomInt = (0..360).random()
         view.rotation = randomInt.toFloat()
+    }
+
+    fun addView(view : ImageView){
+        var randomCardNumber = (1..numberOfCards).random()
+        layout?.addView(imageViewClub)
+
     }
 
 }
