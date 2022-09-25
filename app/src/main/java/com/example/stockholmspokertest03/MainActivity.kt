@@ -197,7 +197,7 @@ class MainActivity : AppCompatActivity() {
             var listOfRandomInts = listOfInts.toMutableList()
             listOfRandomInts.shuffle()
             Log.d("!!!","listOfInts$listOfInts")
-            Log.d("!!!","listOfInts$listOfRandomInts")
+            Log.d("!!!","listOfRandomInts$listOfRandomInts")
     }
 
 }
