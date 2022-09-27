@@ -36,6 +36,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var imageViewDiamond4 : ImageView
  */
 
+
         override fun onCreate(savedInstanceState: Bundle?) {
             super.onCreate(savedInstanceState)
             setContentView(R.layout.activity_main)
@@ -57,6 +58,8 @@ class MainActivity : AppCompatActivity() {
             val imageViewDiamond2 = ImageView(this)
             val imageViewDiamond3 = ImageView(this)
             val imageViewDiamond4 = ImageView(this)
+
+
 
 
 
@@ -85,6 +88,7 @@ class MainActivity : AppCompatActivity() {
 
             //val imgResId = R.drawable.playing_card_club_2
             // var resId = imgResId
+
 
 
             // button onClick listener
@@ -141,10 +145,17 @@ class MainActivity : AppCompatActivity() {
                 rotateView(imageViewDiamond4)
 
                 addPlayingCardViewsRandomly()
+                //shufflePlayingCardViews()
 
             }
             // accessing our relative layout from activity_main.xml
             val layout = findViewById<RelativeLayout>(R.id.layout)
+
+            val galleryCardSlot = ImageView(this)
+            galleryCardSlot.layoutParams = LinearLayout.LayoutParams(400, 400)
+            galleryCardSlot.setImageResource(R.drawable.playing_card_empty)
+            placeView(galleryCardSlot)
+            layout?.addView(galleryCardSlot)
 
             // Add ImageView to LinearLayout
             layout?.addView(imageViewClub2) // adding image to the layout
@@ -199,6 +210,15 @@ class MainActivity : AppCompatActivity() {
             Log.d("!!!","listOfInts$listOfInts")
             Log.d("!!!","listOfRandomInts$listOfRandomInts")
     }
+/*
+    fun shufflePlayingCardViews() {
+        var listOfMutableCards = mutableListOf<ImageView>(imageViewClub2,imageViewClub3,imageViewClub4,imageViewClub5,imageViewClub6,imageViewClub7,imageViewClub8,imageViewClub9,imageViewClub10,imageViewClubJack,imageViewClubQueen,imageViewClubKing,imageViewClubAce,imageViewDiamond2,imageViewDiamond3,imageViewDiamond4)
+        var listOfMutableCardsRandom = listOfMutableCards.toMutableList()
+        listOfMutableCardsRandom.shuffle()
 
+        Log.d("!!!","listOfMutableCards$listOfMutableCards")
+        Log.d("!!!","listOfMutableCardsRandom$listOfMutableCardsRandom")
+    }
+*/
 }
 
